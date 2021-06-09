@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 28 Apr 2021 pada 21.34
+-- Waktu pembuatan: 09 Jun 2021 pada 09.56
 -- Versi server: 10.4.14-MariaDB
 -- Versi PHP: 7.4.11
 
@@ -20,6 +20,40 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_aplikasijajan`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tb_datapesanan`
+--
+
+CREATE TABLE `tb_datapesanan` (
+  `Id` int(11) NOT NULL,
+  `Nama` varchar(100) NOT NULL,
+  `Pesanan` varchar(150) NOT NULL,
+  `Harga` int(11) NOT NULL,
+  `Tanggal` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tb_datapesanan`
+--
+
+INSERT INTO `tb_datapesanan` (`Id`, `Nama`, `Pesanan`, `Harga`, `Tanggal`) VALUES
+(1, 'Anisya', 'Matcha with Grass Jelly Big Size', 20000, '2021-06-08 20:34:15'),
+(2, 'Diva', 'Matcha with Grass Jelly Big Size', 20000, '2021-06-08 20:58:36'),
+(3, 'Diyah', 'Matcha with Grass Jelly Small Size', 18000, '2021-06-08 20:59:31'),
+(4, 'Dhani', 'Thaitea with Pudding Regular Size', 19000, '2021-06-08 21:45:18'),
+(5, 'Bara', 'Matcha with Grass Jelly Big Size', 20000, '2021-06-08 21:45:56'),
+(6, 'Diaz', 'Matcha with Grass Jelly Regular Size', 19000, '2021-06-08 21:46:57'),
+(7, 'Mawar', 'Thaitea with Pudding Regular Size', 19000, '2021-06-08 21:50:15'),
+(8, 'Anisa', 'Matcha with Grass Jelly Big Size', 20000, '2021-06-08 21:54:58'),
+(9, 'Rama', 'Matcha with Grass Jelly Big Size', 20000, '2021-06-08 23:02:12'),
+(10, 'Karin', 'Matcha with Grass Jelly Small Size', 18000, '2021-06-08 23:35:20'),
+(11, 'Kevin', 'Milktea with Pearl Small Size', 19000, '2021-06-08 23:50:06'),
+(12, 'Ulfa', 'Matcha with Grass Jelly Regular Size', 19000, '2021-06-08 23:50:47'),
+(13, 'Yanto', 'Thaitea with Pudding Big Size', 20000, '2021-06-09 00:55:05'),
+(14, 'Yanto', 'Milktea with Pearl Big Size', 21000, '2021-06-09 01:03:37');
 
 -- --------------------------------------------------------
 
@@ -73,6 +107,12 @@ INSERT INTO `tb_menu` (`id_menu`, `menu_name`, `drink_size`) VALUES
 --
 
 --
+-- Indeks untuk tabel `tb_datapesanan`
+--
+ALTER TABLE `tb_datapesanan`
+  ADD PRIMARY KEY (`Id`);
+
+--
 -- Indeks untuk tabel `tb_login`
 --
 ALTER TABLE `tb_login`
@@ -87,6 +127,12 @@ ALTER TABLE `tb_menu`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
+
+--
+-- AUTO_INCREMENT untuk tabel `tb_datapesanan`
+--
+ALTER TABLE `tb_datapesanan`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_login`
